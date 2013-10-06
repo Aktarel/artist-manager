@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="../" default="build-all">
+
+
+
+	<target name="init">
+		<property name="appname" value="PW-WebApp" />
+		<property name="ejbName" value="PW-Model"/>
+		<property name="pathProjet" value="${basedir}/${appname}" />
+		<property name="src.dir" value="${pathProjet}/src" />
+		<property name="build.dir" value="${pathProjet}/build" />
+		<property name="finalName" value="Ear01" />
+
+		<property name="workspace.dir" value="C:\Users\nicolas\Desktop\Workspace\"></property>
+		<property name="jboss.dir.install"	value="C:/Users/nicolas/Desktop/JB6"></property>
+		<property name="jboss.deploy"	value="${jboss.dir.install}/server/default/deploy"></property>
+		
+
+	</target>
+
+	<target name="create_delete" depends="init">
+		<delete dir="${build.dir}"></delete>
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.dir}/WEB-INF/classes" />
+	</target>
+
+
+
+	<target name="jar" depends="compile">
+
+		<copy todir="${build.dir}/WEB-INF">
+			<fileset dir="${pathProjet}/WebContent/WEB-INF">
+				<!-- <include name="application.xml" /> -->
+				<include name="**/**" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dir}/WEB-INF/classes">
+			<fileset dir="${pathProjet}/resources">
+				<!-- <include name="application.xml" /> -->
+				<include name="**/**" />
+			</fileset>
+		</copy>
+		<jar destfile="${build.dir}/${appname}.war">
+			<fileset dir="${build.dir}">
+				<include name="**/**" />
+			</fileset>
+
+		</jar>
+
+	</target>
+
+	<target depends="create_delete" name="compile">
+		<javac srcdir="${src.dir}" destdir="${build.dir}/WEB-INF/classes"
+			debug="on" deprecation="on" optimize="off" includes="**/**">
+			<classpath>
+				<pathelement
+					path="${jboss.dir.install}\client\jboss-servlet-api_3.0_spec.jar" />
+				<pathelement
+					path="${jboss.dir.install}\client\jboss-ejb-api_3.1_spec.jar" />
+				<pathelement
+					path="${basedir}\${appname}\WebContent\WEB-INF\lib\spring-aop-3.2.4.RELEASE.jar" />
+				<pathelement
+					path="${basedir}\${appname}\WebContent\WEB-INF\lib\spring-beans-3.2.4.RELEASE.jar" />
+				<pathelement
+					path="${basedir}\${appname}\WebContent\WEB-INF\lib\spring-context-3.2.4.RELEASE.jar" />
+				<pathelement
+					path="${basedir}\${appname}\WebContent\WEB-INF\lib\spring-core-3.2.4.RELEASE.jar" />
+				<pathelement
+					path="${basedir}\${appname}\WebContent\WEB-INF\lib\spring-expression-3.2.4.RELEASE.jar" />
+				<pathelement
+					path="${basedir}\${appname}\WebContent\WEB-INF\lib\spring-web-3.2.4.RELEASE.jar" />
+				<pathelement
+					path="${basedir}\${appname}\WebContent\WEB-INF\lib\spring-webmvc-3.2.4.RELEASE.jar" />
+				<pathelement
+					path="${workspace.dir}\${ejbName}\build\${ejbName}.jar" />
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="packaging-ear">
+		<copy todir="${build.dir}/META-INF">
+			<fileset dir="${pathProjet}/META-INF">
+				<include name="application.xml" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dir}">
+			<fileset dir="${pathProjet}/resources">
+				<include name="jndi.properties" />
+			</fileset>
+		</copy>
+
+		<copy file="${build.dir}/../../${ejbName}/build/${ejbName}.jar"
+			todir="${build.dir}">
+		</copy>
+
+		<jar destfile="${build.dir}/${finalName}.ear">
+			<fileset dir="${build.dir}">
+				<include name="*.jar" />
+				<include name="*.war" />
+				<include name="META-INF/*" />
+				<include name="*.properties" />
+			</fileset>
+		</jar>
+
+	</target>
+
+	<target name="deploy" depends="packaging-ear">
+		<copy file="${build.dir}/${finalName}.ear" todir="${jboss.deploy}">
+		</copy>
+	</target>
+	<target name="deployJar">
+		<copy file="${build.dir}/${appname}.war" todir="${jboss.deploy}">
+		</copy>
+	</target>
+
+</project>
