@@ -9,13 +9,13 @@
  		<h1>On devrait voir l'artiste : <c:out value="${artiste.nom}" /></h1>
  		
  		<h2>Sa description</h2>
- 		<c:out value="${artiste.description}"></c:out><br/>
+ 		<c:out escapeXml="false" value="${artiste.description}"></c:out><br/>
  		
  		
  		<h2>Ses meilleurs chansons</h2>
  		<div>
- 			<c:forEach var="piste" items="${artiste.listePiste}">
- 				<c:out value="${piste.nom}"></c:out><br/>
+ 			<c:forEach var="piste" items="${artiste.listePiste}" >
+ 				<c:out value="${piste.classement}"></c:out> | <c:out value="${piste.nom}"></c:out> | <c:out value="${piste.nbListeners}"/><br/>
  			</c:forEach>
  		</div>
  		

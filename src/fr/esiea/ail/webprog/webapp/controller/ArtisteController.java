@@ -7,8 +7,8 @@ import javax.naming.NamingException;
 
 import manager.GestionnaireRessource;
 import manager.Ressources;
-import manager.impl.ArtisteManagerImpl;
 import modele.Artiste;
+import modele.Piste;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

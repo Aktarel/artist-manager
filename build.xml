@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project basedir="../" default="build-all">
+<project basedir="../" >
 
 
 
@@ -11,8 +11,8 @@
 		<property name="build.dir" value="${pathProjet}/build" />
 		<property name="finalName" value="Ear01" />
 
-		<property name="workspace.dir" value="C:\Users\nicolas\Desktop\Workspace\"></property>
-		<property name="jboss.dir.install"	value="C:/Users/nicolas/Desktop/JB6"></property>
+		<property name="workspace.dir" value="{basedir}/.."></property>
+		<property name="jboss.dir.install"	value="C:/Users/Akta/Desktop/JB6"></property>
 		<property name="jboss.deploy"	value="${jboss.dir.install}/server/default/deploy"></property>
 		
 
@@ -25,29 +25,6 @@
 	</target>
 
 
-
-	<target name="jar" depends="compile">
-
-		<copy todir="${build.dir}/WEB-INF">
-			<fileset dir="${pathProjet}/WebContent/WEB-INF">
-				<!-- <include name="application.xml" /> -->
-				<include name="**/**" />
-			</fileset>
-		</copy>
-		<copy todir="${build.dir}/WEB-INF/classes">
-			<fileset dir="${pathProjet}/resources">
-				<!-- <include name="application.xml" /> -->
-				<include name="**/**" />
-			</fileset>
-		</copy>
-		<jar destfile="${build.dir}/${appname}.war">
-			<fileset dir="${build.dir}">
-				<include name="**/**" />
-			</fileset>
-
-		</jar>
-
-	</target>
 
 	<target depends="create_delete" name="compile">
 		<javac srcdir="${src.dir}" destdir="${build.dir}/WEB-INF/classes"
@@ -77,7 +54,30 @@
 		</javac>
 	</target>
 
-	<target name="packaging-ear">
+	
+	<target name="jar" depends="compile">
+
+		<copy todir="${build.dir}/WEB-INF">
+			<fileset dir="${pathProjet}/WebContent/WEB-INF">
+				<!-- <include name="application.xml" /> -->
+				<include name="**/**" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dir}/WEB-INF/classes">
+			<fileset dir="${pathProjet}/resources">
+				<!-- <include name="application.xml" /> -->
+				<include name="**/**" />
+			</fileset>
+		</copy>
+		<jar destfile="${build.dir}/${appname}.war">
+			<fileset dir="${build.dir}">
+				<include name="**/**" />
+			</fileset>
+
+		</jar>
+
+	</target>
+	<target name="packaging-ear" depends="jar">
 		<copy todir="${build.dir}/META-INF">
 			<fileset dir="${pathProjet}/META-INF">
 				<include name="application.xml" />
@@ -106,10 +106,6 @@
 
 	<target name="deploy" depends="packaging-ear">
 		<copy file="${build.dir}/${finalName}.ear" todir="${jboss.deploy}">
-		</copy>
-	</target>
-	<target name="deployJar">
-		<copy file="${build.dir}/${appname}.war" todir="${jboss.deploy}">
 		</copy>
 	</target>
 
