@@ -1,0 +1,91 @@
+html{
+	min-width: 960px
+}
+
+@font-face { 
+  font-family: Droid Sans; 
+    src: url('../fonts/DroidSans-webfont.eot'); 
+    src: local("Droid Sans"), url('../fonts/DroidSans-webfont.woff'); 
+} 
+
+@font-face { 
+  font-family: News Cycle; 
+    src: url('../fonts/NewsCycle-Regular.eot'); 
+    src: local("News Cycle"), url('../fonts/NewsCycle-Regular.ttf'); 
+} 
+
+Body{
+  background:#f6f4cd;
+  font-family:News Cycle,sans-serif;
+  margin:0px;
+}
+H1{
+  font-family:News Cycle,sans-serif;
+  text-align: center;
+
+}
+H2 {
+  font-family:News Cycle,sans-serif;
+}
+
+.centre {text-align: center;}
+
+.hidden {
+   display: none;
+}
+
+.visible {
+   display: inline;
+}
+.entete-cont {
+    width:100%;
+    position:fixed;
+    top:0px;
+}
+.entete {
+    height:70px;
+    background-image: linear-gradient(bottom, rgb(14,61,75) 28%, rgb(41,92,105) 62%, rgb(70,120,137) 91%);
+	background-image: -o-linear-gradient(bottom, rgb(14,61,75) 28%, rgb(41,92,105) 62%, rgb(70,120,137) 91%);
+	background-image: -moz-linear-gradient(bottom, rgb(14,61,75) 28%, rgb(41,92,105) 62%, rgb(70,120,137) 91%);
+	background-image: -webkit-linear-gradient(bottom, rgb(14,61,75) 28%, rgb(41,92,105) 62%, rgb(70,120,137) 91%);
+	background-image: -ms-linear-gradient(bottom, rgb(14,61,75) 28%, rgb(41,92,105) 62%, rgb(70,120,137) 91%);
+	-webkit-box-shadow: 1px 1px 3px 2px #000000;
+	box-shadow: 1px 1px 3px 2px #000000;
+    width:100%;
+    margin:0px auto;
+    
+}
+
+ul.entete-nav li.logo{
+	float: left;
+	margin-top : 3px;
+	width: 128px;
+	height: 64px;
+	list-style-type: none;
+	
+}
+ul.entete-nav li.pistes{
+	float: left;
+	background: url(/progWeb2013/ressources/images/navbar/pistes.png)  ;
+	width: 64px;
+	height: 64px;
+	margin-top : 3px;
+	list-style-type: none;
+}
+ul.entete-nav li.images{
+	float: left;
+	background: url(/progWeb2013/ressources/images/navbar/images.png)  ;
+	width: 64px;
+	height: 64px;
+	margin-top : 3px;
+	list-style-type: none;
+}
+ul.entete-nav li.search{
+	float: left;
+	background: url(/progWeb2013/ressources/images/navbar/search.png) ;
+	width: 64px;
+	height: 64px;
+	margin-top : 3px;
+	list-style-type: none;
+}
+

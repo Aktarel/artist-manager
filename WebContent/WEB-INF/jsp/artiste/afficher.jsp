@@ -4,9 +4,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">	
    
     <head>
-        <title>Afficher un artiste</title>     
-            
- 		<h1>On devrait voir l'artiste : <c:out value="${artiste.nom}" /></h1>
+        <title>Afficher un artiste</title> 
+        <jsp:include page="../commun/ressources.jsp" />
+	 
+    </head>
+   
+   
+   		 <jsp:include page="../commun/entete.jsp" />
+    	
+ 
+    	</br>
+    	</br>
+    	</br>
+ 		<h1><c:out value="${artiste.nom}" /></h1>
  		
  		<h2>Sa description</h2>
  		<c:out escapeXml="false" value="${artiste.description}"></c:out><br/>
