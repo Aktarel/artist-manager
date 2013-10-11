@@ -1,5 +1,5 @@
 html{
-	min-width: 960px
+	min-width: 1024px
 }
 
 @font-face { 
@@ -58,7 +58,9 @@ H2 {
 
 ul.entete-nav li.logo{
 	float: left;
-	margin-top : 3px;
+	margin-top : 18px;
+	font-weight: bold;
+	font-size:20px;
 	width: 128px;
 	height: 64px;
 	list-style-type: none;
@@ -67,6 +69,7 @@ ul.entete-nav li.logo{
 ul.entete-nav li.pistes{
 	float: left;
 	background: url(/progWeb2013/ressources/images/navbar/pistes.png)  ;
+	margin-right:10px;
 	width: 64px;
 	height: 64px;
 	margin-top : 3px;
@@ -75,6 +78,7 @@ ul.entete-nav li.pistes{
 ul.entete-nav li.images{
 	float: left;
 	background: url(/progWeb2013/ressources/images/navbar/images.png)  ;
+	margin-right:10px;
 	width: 64px;
 	height: 64px;
 	margin-top : 3px;
@@ -83,6 +87,7 @@ ul.entete-nav li.images{
 ul.entete-nav li.search{
 	float: left;
 	background: url(/progWeb2013/ressources/images/navbar/search.png) ;
+	margin-right:10px;
 	width: 64px;
 	height: 64px;
 	margin-top : 3px;

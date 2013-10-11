@@ -12,7 +12,7 @@
 		<property name="finalName" value="Ear01" />
 
 		<property name="workspace.dir" value="{basedir}/.."></property>
-		<property name="jboss.dir.install"	value="C:/Users/nicolas/Desktop/JB6"></property>
+		<property name="jboss.dir.install"	value="C:/Users/Akta/Desktop/JB6"></property>
 		<property name="jboss.deploy"	value="${jboss.dir.install}/server/default/deploy"></property>
 		
 
