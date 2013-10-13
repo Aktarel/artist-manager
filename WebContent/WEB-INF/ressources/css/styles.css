@@ -58,11 +58,14 @@ H2 {
 
 ul.entete-nav li.logo{
 	float: left;
-	margin-top : 18px;
+	margin-top : 9px;
+	margin-left : 120px;
+	margin-left : 80px;
 	font-weight: bold;
 	font-size: 2em;
 	width: 250px;
 	height: 64px;
+	color:white;
 	list-style-type: none;
 	
 }
