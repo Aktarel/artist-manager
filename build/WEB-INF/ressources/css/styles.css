@@ -1,7 +1,10 @@
 html {
 	min-width: 800px
 }
-
+ul a{
+	text-decoration:none;
+	color: white;
+}
 @font-face {
 	font-family: Droid Sans;
 	src: url('../fonts/DroidSans-webfont.eot');
@@ -21,13 +24,12 @@ Body {
 
 H1 {
 	font-family: News Cycle, sans-serif;
-	text-align: center;
-	margin-left: 300px;
+	margin-left: 140px;
 }
 
 H2 {
 	font-family: News Cycle, sans-serif;
-	margin-left: 300px;
+	margin-left: 160px;
 }
 
 .centre {
@@ -69,7 +71,7 @@ H2 {
 ul.entete-nav li.logo {
 	float: left;
 	margin-top: 9px;
-	margin-left:250px;
+	margin-left:100px;
 	font-weight: bold;
 	font-size: 2em;
 	width: 250px;
@@ -81,7 +83,7 @@ ul.entete-nav li.logo {
 ul.entete-nav li.pistes {
 	float: left;
 	background: url(/progWeb2013/ressources/images/navbar/pistes.png);
-	margin-right: 10px;
+	margin-right: 20px;
 	width: 64px;
 	height: 64px;
 	margin-top: 3px;
@@ -91,7 +93,7 @@ ul.entete-nav li.pistes {
 ul.entete-nav li.images {
 	float: left;
 	background: url(/progWeb2013/ressources/images/navbar/images.png);
-	margin-right: 10px;
+	margin-right: 20px;
 	width: 64px;
 	height: 64px;
 	margin-top: 3px;
@@ -101,7 +103,7 @@ ul.entete-nav li.images {
 ul.entete-nav li.search {
 	float: left;
 	background: url(/progWeb2013/ressources/images/navbar/search.png);
-	margin-right: 10px;
+	margin-right: 20px;
 	width: 64px;
 	height: 64px;
 	margin-top: 3px;
@@ -109,10 +111,10 @@ ul.entete-nav li.search {
 }
 
 p {
-	margin-left: 300px;
+	margin-left: 140px;
 }
 .bordered {
-	margin-left: 300px;
+	margin-left: 140px;
     border: solid #ccc 1px;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
@@ -186,4 +188,3 @@ p {
     -webkit-border-radius: 0 0 6px 0;
     border-radius: 0 0 6px 0;
 }
-
