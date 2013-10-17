@@ -4,5 +4,7 @@
 <link rel="stylesheet"  href="<c:url value="/ressources/css/styles.css"/>" />
 <script type="text/javascript"   src="<c:url value="/ressources/js/jquery-1.8.3.js"/>" ></script>
 <script type="text/javascript"   src="<c:url value="/ressources/js/jquery-ui-1.9.2.custom.js"/>"></script>
+<script type="text/javascript"   src="<c:url value="/ressources/js/resize.js"/>"></script>
+
 
 <link rel="shortcut icon" href="<c:url value="/ressources/images/favicon.ico" />" />

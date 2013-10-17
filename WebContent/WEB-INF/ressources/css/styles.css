@@ -230,6 +230,10 @@ section{
 	float:left;
 }
 
+#photos img{
+	border-radius: 3px;
+}
+
 #cssmenu {
   width: 200px;
   border-style: solid solid none solid;
@@ -270,4 +274,28 @@ section{
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
 box-sizing: border-box;
+}
+
+.gallerie{
+	width: 1000px;
+	margin-left: 80px;
+	padding-left: -40;
+}
+.gallerie h2{
+font-family: "Lucida Grande", Arial, Helvetica, Verdana, sans-serif;
+margin-left: 160px;
+}
+.content-bio-col{
+	float:left;
+	width:70%;
+}
+
+.photo-bio-col{
+	float:right;
+	width:30%;
+}
+#imgBiographie{
+	padding-left:20px;
+	border-radius: 4px;
+	margin-top:-90px;
 }

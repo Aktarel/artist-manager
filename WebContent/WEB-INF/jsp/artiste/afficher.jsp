@@ -7,6 +7,50 @@
 <title>Resultat de votre recherche : ${artiste.nom}</title>
 <jsp:include page="../commun/ressources.jsp" />
 
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	function resize() { 
+		  var img = document.getElementById('imgBiographie');
+		  var maxh = 250;
+		  var maxw = 250;
+		  var ratio = maxh/maxw;  
+		  if (img.height/img.width > ratio){  
+		     // height is the problem  
+		    if (img.height > maxh){  
+		      img.width = Math.round(img.width*(maxh/img.height));  
+		      img.height = maxh;  
+		    }  
+		  } else {  
+		    // width is the problem  
+		    if (img.width > maxw){  
+		      img.height = Math.round(img.height*(maxw/img.width));  
+		      img.width = maxw;  
+		    }  
+		  } 
+		};
+
+		function changeCurrentImage()  
+		{  
+			var img = document.getElementById('imgBiographie');
+		    img.onload = resize;
+
+		    var imgUrl = img.src;
+
+		    var imgFirstPart = imgUrl.substring(0, imgUrl.lastIndexOf('.') - 9);
+		    var imgLastPart = imgUrl.substring(imgUrl.lastIndexOf('.'));
+		    var currentImg = document.getElementById('imgBiographie');
+		    currentImg.src = imgFirstPart + imgLastPart;
+
+
+		}
+		
+		
+		//On resize l'image
+		changeCurrentImage();
+});
+</script>
+
 </head>
 
 
@@ -23,7 +67,8 @@
 			<ul>
 				<c:forEach var="similaire" items="${similaires}">
 					<c:forEach var="image" items="${similaire.listeImage}" end="0">
-						<li style="background: url(${image.url}) center center;"><a href="<c:url value="/artiste/read?nom=${similaire.nom} " />"><span>${similaire.nom}</span></a></li>
+						<li style="background: url(${image.url}) center center;"><a
+							href="<c:url value="/artiste/read?nom=${similaire.nom} " />"><span>${similaire.nom}</span></a></li>
 					</c:forEach>
 				</c:forEach>
 
@@ -36,12 +81,16 @@
 		</h1>
 		<section style="padding-top:10px;" id="biographie">
 		<h2>Biographie</h2>
-		<div class="bio col">
+		<div class="content-bio-col">
 			<p>
 				<c:out escapeXml="false" value="${artiste.description}"></c:out>
 			</p>
 		</div>
-		<div class="bio col"></div>
+		<div id="conteneur-imgBio" class="photo-bio-col">
+			<c:forEach var="image" items="${artiste.listeImage}" end="0">
+				<img id="imgBiographie" src="${image.url}" alt=""  />
+			</c:forEach>
+		</div>
 		</section>
 
 
