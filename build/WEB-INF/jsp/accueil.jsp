@@ -10,16 +10,21 @@
 </head>
 
 
+
 <jsp:include page="commun/entete.jsp" />
 
 
 </br>
-
+</br>
+</br>
+</br>
+<div id="container">
 	<h1>Que cherchez vous au juste ?</h1>
-	<div style="margin-left:140px;">
-	<form action="<c:url value="/artiste/read" />">
-		<label for="nom">Nom Artiste</label> <input type="text" name="nom" />
-		<input type="submit" value="Valider" />
-	</form>
+	<div style="margin-left: 140px;">
+		<form method="post" action="<c:url value="/artiste/read" />">
+			<label for="nom">Nom Artiste</label> <input type="text" name="nom" />
+			<input type="submit" value="Valider" />
+		</form>
 	</div>
+</div>
 </html>

@@ -1,5 +1,7 @@
 package fr.esiea.ail.webprog.webapp.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import javax.naming.InitialContext;
@@ -8,7 +10,6 @@ import javax.naming.NamingException;
 import manager.GestionnaireRessource;
 import manager.Ressources;
 import modele.Artiste;
-import modele.Piste;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ArtisteController {
 
 	private InitialContext ic;
-	
+
 	public ArtisteController() throws NamingException {
 
 		Properties env = new Properties();
@@ -34,12 +35,29 @@ public class ArtisteController {
 	}
 
 	@RequestMapping("/read")
-	public String home(@RequestParam String nom, Model modele) throws NamingException{
+	public String home(@RequestParam String nom, Model modele)
+			throws NamingException {
+
+		List<Artiste> similaires = new ArrayList<Artiste>();
 
 		GestionnaireRessource manager = (GestionnaireRessource) ic
 				.lookup("Ear01/ArtisteManagerImpl/remote");
-		Artiste a = (Artiste) manager.get(Ressources.artiste,nom);
+		Artiste a = (Artiste) manager.get(Ressources.artiste, nom);
+
+		if (a != null) {
+			for (String similaire : a.getSimilaires().split(" , ")) {
+				Artiste artisteToSee = (Artiste) manager.get(
+						Ressources.artiste, similaire.trim());
+				similaires.add(artisteToSee);
+			}
+		}
+		else
+			return "accueil";
+		
+
 		modele.addAttribute("artiste", a);
+		modele.addAttribute("similaires", similaires);
+
 		return "artiste/afficher";
 	}
 }
