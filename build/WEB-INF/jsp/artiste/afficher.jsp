@@ -36,8 +36,9 @@
 		<h1>
 			<c:out value="${artiste.nom}" />
 		</h1>
-		<section id="biographie">
+		<section style="padding-top:10px;" id="biographie">
 		<h2>Biographie</h2>
+		<hr>
 		<div class="bio col">
 			<p>
 				<c:out escapeXml="false" value="${artiste.description}"></c:out>
@@ -49,6 +50,7 @@
 
 		<section id="pistes">
 		<h2>Top 20</h2>
+		<hr>
 		<p>
 			<table class="bordered">
 				<thead>
@@ -72,6 +74,7 @@
 		</section>
 		<section id="photos">
 		<h2>Mosaïque photo</h2>
+		<hr>
 		<p>
 			<c:forEach var="image" items="${artiste.listeImage}">
 				<img height="126" src="${image.url}"

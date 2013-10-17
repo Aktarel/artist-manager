@@ -18,8 +18,6 @@
 </br>
 </br>
 <div id="container">
-
-
 	<div class="col10">
 		<div id='cssmenu'>
 			<ul>
@@ -36,7 +34,7 @@
 		<h1>
 			<c:out value="${artiste.nom}" />
 		</h1>
-		<section id="biographie">
+		<section style="padding-top:10px;" id="biographie">
 		<h2>Biographie</h2>
 		<div class="bio col">
 			<p>
