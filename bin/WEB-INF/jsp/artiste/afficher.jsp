@@ -93,8 +93,9 @@ $(document).ready(function(){
 		</div>
 		</section>
 
-
-		<section id="pistes">
+		</br>
+		</br>
+		<section style="margin-top: 0px;" id="pistes">
 		<h2>Top 20</h2>
 		<p>
 			<table class="bordered">
