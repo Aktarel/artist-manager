@@ -8,47 +8,49 @@
 <jsp:include page="../commun/ressources.jsp" />
 
 <script type="text/javascript">
+
 $(document).ready(function(){
 	
-	function resize() { 
-		  var img = document.getElementById('imgBiographie');
-		  var maxh = 250;
-		  var maxw = 250;
-		  var ratio = maxh/maxw;  
-		  if (img.height/img.width > ratio){  
-		     // height is the problem  
-		    if (img.height > maxh){  
-		      img.width = Math.round(img.width*(maxh/img.height));  
-		      img.height = maxh;  
-		    }  
-		  } else {  
-		    // width is the problem  
-		    if (img.width > maxw){  
-		      img.height = Math.round(img.height*(maxw/img.width));  
-		      img.width = maxw;  
-		    }  
-		  } 
-		};
-
-		function changeCurrentImage()  
-		{  
-			var img = document.getElementById('imgBiographie');
-		    img.onload = resize;
-
-		    var imgUrl = img.src;
-
-		    var imgFirstPart = imgUrl.substring(0, imgUrl.lastIndexOf('.') - 9);
-		    var imgLastPart = imgUrl.substring(imgUrl.lastIndexOf('.'));
-		    var currentImg = document.getElementById('imgBiographie');
-		    currentImg.src = imgFirstPart + imgLastPart;
-
-
-		}
+	
 		
+		function resize() { 
+			  var img = document.getElementById('imgBiographie');
+			  var maxh = 250;
+			  var maxw = 250;
+			  var ratio = maxh/maxw;  
+			  if (img.height/img.width > ratio){  
+			    if (img.height > maxh){  
+			      img.width = Math.round(img.width*(maxh/img.height));  
+			      img.height = maxh;  
+			    }  
+			  } else {  
+			    if (img.width > maxw){  
+			      img.height = Math.round(img.height*(maxw/img.width));  
+			      img.width = maxw;  
+			    }  
+			  }
+			};
+			
+			function changeCurrentImage(){  
+				var img = document.getElementById('imgBiographie');
+			    img.onload = resize;
+
+			    var imgUrl = img.src;
+			    var currentImg = document.getElementById('imgBiographie');
+			    currentImg.src =imgUrl;
+			};
 		
 		//On resize l'image
 		changeCurrentImage();
+		
 });
+</script>
+
+<script type="text/javascript">
+
+function launchAudio(url){
+	$("#player").html("<audio autoplay controls style='width:300px;'><source src='"+url+"' type='audio/mpeg'>Votre navigateur ne supporte pas cette fonctionnalité.</audio>");
+}
 </script>
 
 </head>
@@ -61,17 +63,14 @@ $(document).ready(function(){
 </br>
 </br>
 </br>
-<div id="container">
+<div  id="container">
 	<div class="col10">
 		<div id='cssmenu'>
 			<ul>
 				<c:forEach var="similaire" items="${similaires}">
-					<c:forEach var="image" items="${similaire.listeImage}" end="0">
-						<li style="background: url(${image.url}) center center;"><a
+						<li style="background: url(${similaire.urlImage}) center center;"><a
 							href="<c:url value="/artiste/read?nom=${similaire.nom} " />"><span>${similaire.nom}</span></a></li>
-					</c:forEach>
 				</c:forEach>
-
 			</ul>
 		</div>
 	</div>
@@ -104,14 +103,18 @@ $(document).ready(function(){
 						<th>Classement</th>
 						<th>Nom Piste</th>
 						<th>Auditeurs</th>
+						<th>Actions</th>
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach var="piste" items="${artiste.listePiste}">
 						<tr>
 							<td><c:out value="${piste.classement}"></c:out></td>
-							<td><c:out value="${piste.nom}"></c:out></td>
+							<td>
+							<c:out value="${piste.nom}"></c:out>
+							</td>
 							<td><c:out value="${piste.nbListeners}" /></td>
+						    <td><c:if test="${piste.urlPreview != null }"><img onclick="launchAudio('${piste.urlPreview}')" alt=""  src="<c:url value="/ressources/images/pictos/play-circle.png" />"></img></c:if> </a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

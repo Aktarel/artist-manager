@@ -1,7 +1,5 @@
 package fr.esiea.ail.webprog.webapp.controller;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Properties;
 
 import javax.naming.InitialContext;
@@ -38,25 +36,13 @@ public class ArtisteController {
 	public String home(@RequestParam String nom, Model modele)
 			throws NamingException {
 
-		List<Artiste> similaires = new ArrayList<Artiste>();
-
 		GestionnaireRessource manager = (GestionnaireRessource) ic
 				.lookup("Ear01/ArtisteManagerImpl/remote");
 		Artiste a = (Artiste) manager.get(Ressources.artiste, nom);
 
-		if (a != null) {
-			for (String similaire : a.getSimilaires().split(" , ")) {
-				Artiste artisteToSee = (Artiste) manager.get(
-						Ressources.artiste, similaire.trim());
-				similaires.add(artisteToSee);
-			}
-		}
-		else
-			return "accueil";
 		
-
 		modele.addAttribute("artiste", a);
-		modele.addAttribute("similaires", similaires);
+		modele.addAttribute("similaires", a.getListeSimilaire());
 
 		return "artiste/afficher";
 	}

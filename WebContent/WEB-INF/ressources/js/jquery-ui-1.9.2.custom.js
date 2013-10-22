@@ -18,7 +18,6 @@ if ( $.ui.version ) {
 
 $.extend( $.ui, {
 	version: "1.9.2",
-
 	keyCode: {
 		BACKSPACE: 8,
 		COMMA: 188,

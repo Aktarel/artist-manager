@@ -54,7 +54,7 @@ H2 {
 	width: 100%;
 	position: fixed;
 	top: -6px;
-	min-width: 900px;
+	min-width: 1200px;
 }
 ul.entete-nav li a:hover{
     color:#067d2c;
@@ -137,6 +137,11 @@ ul.entete-nav li.biographie {
 	list-style-type: none;
 }
 
+
+ul #player{
+	float: right;
+	margin-top: 18px;
+}
 
 p {
 	margin-left: 140px;
