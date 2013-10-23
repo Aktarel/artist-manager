@@ -7,7 +7,7 @@
 		<c:if test="${artiste != null}">
 		<li class="biographie"><a href="<c:url value="/artiste/read?nom=${artiste.nom}#" />"  >&nbsp; &nbsp;</a></li>
 		<li class="pistes"><a href="<c:url value="/artiste/read?nom=${artiste.nom}#pistes"/>">&nbsp; &nbsp;</a></li>
-		<li class="images"><a href="<c:url value="/artiste/read?nom=${artiste.nom}#photos"/>"  >&nbsp; &nbsp;</a></li>
+		<li class="evenements"><a href="<c:url value="/artiste/read?nom=${artiste.nom}#evenements"/>"  >&nbsp; &nbsp;</a></li>
 		<div id="player"></div>
 		</c:if>
 	</ul>

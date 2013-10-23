@@ -44,13 +44,11 @@ $(document).ready(function(){
 		changeCurrentImage();
 		
 });
-</script>
-
-<script type="text/javascript">
 
 function launchAudio(url){
 	$("#player").html("<audio autoplay controls style='width:300px;'><source src='"+url+"' type='audio/mpeg'>Votre navigateur ne supporte pas cette fonctionnalité.</audio>");
 }
+
 </script>
 
 </head>
@@ -94,7 +92,7 @@ function launchAudio(url){
 
 		</br>
 		</br>
-		<section style="margin-top: 0px;" id="pistes">
+		<section style="margin-top: 45px;" id="pistes">
 		<h2>Top 20</h2>
 		<p>
 			<table class="bordered">
@@ -121,12 +119,20 @@ function launchAudio(url){
 			</table>
 		</p>
 		</section>
-		<section id="photos">
-		<h2>Mosaïque photo</h2>
+		<section id="evenements">
+		<h2>Evenements</h2>
 		<p>
-			<c:forEach var="image" items="${artiste.listeImage}">
-				<img height="126" src="${image.url}"
-					title="Ajoutée le ${image.dateAjoute}" /> &nbsp; &nbsp;
+			<!-- TODO: http://maps.google.com/maps?z=12&t=m&q=loc:38.9419+-78.3020 -->
+			<c:forEach var="evenement" items="${artiste.listeEvenement}">
+			${evenement.nom}<br/>
+			${evenement.url}<br/>
+			${evenement.date}<br/>
+			${evenement.adresse.city}<br/>
+			${evenement.adresse.codePostal}<br/>
+			${evenement.adresse.street}<br/>
+			${evenement.adresse.country}<br/>
+			${evenement.lat}<br/>
+			${evenement.longitude}
  			</c:forEach>
 		</p>
 		</section>

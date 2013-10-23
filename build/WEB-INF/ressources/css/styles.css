@@ -37,7 +37,7 @@ H2 {
 
 #container{
 	max-width: 1200px;
-	min-width: 900px;
+	min-width: 1024px;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -54,7 +54,7 @@ H2 {
 	width: 100%;
 	position: fixed;
 	top: -6px;
-	min-width: 1200px;
+	min-width: 1160px;
 }
 ul.entete-nav li a:hover{
     color:#067d2c;
@@ -107,9 +107,9 @@ ul.entete-nav li.pistes {
 	list-style-type: none;
 }
 
-ul.entete-nav li.images {
+ul.entete-nav li.evenements {
 	float: left;
-	background: url(/progWeb2013/ressources/images/navbar/images.png);
+	background: url(/progWeb2013/ressources/images/navbar/evenements.png);
 	margin-right: 20px;
 	width: 64px;
 	height: 64px;
@@ -236,12 +236,12 @@ section{
 	float:left;
 }
 
-#photos img{
+#evenements img{
 	border-radius: 3px;
 }
 
 #cssmenu {
-  width: 200px;
+  width: 225px;
   border-style: solid solid none solid;
   border-color: #94AA74;
   border-width: 1px;
