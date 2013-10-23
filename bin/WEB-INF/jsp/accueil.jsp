@@ -11,7 +11,7 @@
 
 
 
-<jsp:include page="commun/entete.jsp" />
+<jsp:include page="commun/enteteHome.jsp" />
 
 
 </br>
@@ -22,17 +22,6 @@
 	<div class="col10"></div>
 	<div class="col90">
 		
-		<h1 >Que cherchez vous au juste ?</h1>
-		<section style="padding-top:10px;" id="artisteSearch">
-		<h2>Un artiste : </h2>
-		<div style="margin-left: 140px;">
-			<form method="post" action="<c:url value="/artiste/read" />">
-				<label for="nom">Nom Artiste</label> <input type="text" name="nom" />
-				<input type="submit" value="Valider" />
-			</form>
-		</div>
-
-		</section>
 	</div>
 </div>
 </html>

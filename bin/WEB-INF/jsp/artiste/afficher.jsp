@@ -1,6 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0014)about:internet -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+ 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 
 <head>
@@ -57,7 +59,6 @@ function launchAudio(url){
 <jsp:include page="../commun/entete.jsp" />
 
 
-</br>
 </br>
 </br>
 </br>
@@ -122,18 +123,32 @@ function launchAudio(url){
 		<section id="evenements">
 		<h2>Evenements</h2>
 		<p>
-			<!-- TODO: http://maps.google.com/maps?z=12&t=m&q=loc:38.9419+-78.3020 -->
-			<c:forEach var="evenement" items="${artiste.listeEvenement}">
-			${evenement.nom}<br/>
-			${evenement.url}<br/>
-			${evenement.date}<br/>
-			${evenement.adresse.city}<br/>
-			${evenement.adresse.codePostal}<br/>
-			${evenement.adresse.street}<br/>
-			${evenement.adresse.country}<br/>
-			${evenement.lat}<br/>
-			${evenement.longitude}
- 			</c:forEach>
+			<table class="bordered">
+				<thead>
+					<tr>
+						<th>Titre</th>
+						<th>Date</th>
+						<th>Adresse</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+				<c:if test="${fn:length(artiste.listeEvenement) eq 0}">
+					<tr>L'artiste ne possède pas d'évenements</tr>
+				</c:if>
+			<c:if test="${fn:length(artiste.listeEvenement) gt 0}">
+				<c:forEach var="evenement" items="${artiste.listeEvenement}">
+					<tr>
+								<td>${evenement.nom}</td>
+								<td>${evenement.date}</td>
+								<td>${evenement.adresse}</td>
+							    <td><c:if test="${evenement.adresse != null}"><a target="blank" href="https://maps.google.com/maps?z=7&t=m&q=${evenement.adresse}" ><img alt="" width="32" height="32"  src="<c:url value="/ressources/images/pictos/google-map.png" />"></img></a></c:if></td>
+					</tr>
+	 			</c:forEach>
+ 			</c:if>
+ 			</tbody>
+ 				</table>
+		
 		</p>
 		</section>
 		</br>
