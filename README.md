@@ -21,7 +21,17 @@ Deux composants :
 => Le deploiement se fait à l'aide de ant qui deploie automatiquement l'archive ear (jar + war)
 
 Le contexte de l'application par défault est : progWeb2013.
+
 Vous pouvez le modifier à tout moment via le fichier XML : application.xml
+
+Instructions
+==================
+Afin d'installer le projet, nous vous suggérons les commandes suivantes :
+  
+  <h3> Installer JDK </h3>
+  <p> <cmd> </p>
+  
+  <h3> Installer JBoss AS 6 </h3>
 
 Auteurs
 =============
