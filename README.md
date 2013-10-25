@@ -8,6 +8,7 @@ Objectifs
 ==============
 Artist-Manager permet d'en apprendre plus sur les artistes et leurs similaires (artistes équivalents).
 On y découvre l'ensemble des chansons les plus connus des artistes et les evenements auquel ils participeront.
+
 Les similaires nous permettent d'en apprendre plus sur le genre musical auquel l'artiste appartient.
 
 Packaging
