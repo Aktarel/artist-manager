@@ -27,10 +27,10 @@ Vous pouvez le modifier à tout moment via le fichier XML : application.xml
 Instructions
 ==================
    <h3>Unix</h3>
-    <h4> Installer JDK </h4>
-   <p> cmd </p>
+   <h4> Installer JDK </h4>
+    <p> cmd </p>
     
-    <h4> Installer JBoss AS 6 </h4>
+   <h4> Installer JBoss AS 6 </h4>
   
   <h3>Windows</h3>
 
