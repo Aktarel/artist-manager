@@ -5,6 +5,6 @@ Cette application permet d'interroger les bases de données LastFm afin d'en ext
 
 Deux composants :
 <ul>
-  <li>PW-Model : EJB+Model </li>
+  <li><a href='https://github.com/Aktarel/artist-manager-model'>PW-Model : EJB+Model </a></li>
   <li>PW-WebApps : Application WEB</li>
 </ul>
