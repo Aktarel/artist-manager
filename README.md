@@ -7,6 +7,7 @@ les informations d'un artiste et des artistes équivalents.
 Objectifs
 ==============
 Artist-Manager permet d'en apprendre plus sur les artistes et leurs similaires (artistes équivalents).
+
 On y découvre l'ensemble des chansons les plus connus des artistes et les evenements auquel ils participeront.
 
 Les similaires nous permettent d'en apprendre plus sur le genre musical auquel l'artiste appartient.
@@ -33,8 +34,9 @@ Instructions
     <p> cmd </p>
     
    <h4> Installer JBoss AS 6 </h4>
-  
-  
+   
+   <h4> Installer Ant  </h4>
+   
   <h3>Windows</h3>
 
 
