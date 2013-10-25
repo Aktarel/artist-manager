@@ -27,6 +27,6 @@ Auteurs
 =============
 Deux étudiants en école d'ingénieur à l'ESIEA
 <ul>
-<li>Nicolas Lebec</li>
-<li>Remy Ouadah</li>
+  <li>Nicolas Lebec</li>
+  <li><a href="https://github.com/moigoule"/> Remy Ouadah</li>
 </ul>
