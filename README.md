@@ -1,10 +1,32 @@
 Artist-manager (PW-WebApp)
 ==============
-Ce dépot git est un projet étudiant de l'ecole d'ingénieur ESIEA (Paris). 
-Cette application permet d'interroger les bases de données LastFm afin d'en extraire les informations d'un artiste.
+Cette application permet d'interroger les bases de données LastFm / Deezer afin d'en extraire 
+les informations d'un artiste et des artistes équivalents.
 
+
+Objectifs
+==============
+Artist-Manager permet d'en apprendre plus sur les artistes et leurs similaires (artistes équivalents).
+On y découvre l'ensemble des chansons les plus connus des artistes et les evenements auquel ils participeront.
+Les similaires nous permettent d'en apprendre plus sur le genre musical auquel l'artiste appartient.
+
+Packaging
+==============
 Deux composants :
 <ul>
   <li><a href='https://github.com/Aktarel/artist-manager-model'>PW-Model : EJB+Model </a></li>
   <li>PW-WebApps : Application WEB</li>
+</ul>
+
+=> Le deploiement se fait à l'aide de ant qui deploie automatiquement l'archive ear (jar + war)
+
+Le contexte de l'application par défault est : progWeb2013.
+Vous pouvez le modifier à tout moment via le fichier XML : application.xml
+
+Auteurs
+=============
+Deux étudiants en école d'ingénieur à l'ESIEA
+<ul>
+<li>Nicolas Lebec</li>
+<li>Remy Ouadah</li>
 </ul>
