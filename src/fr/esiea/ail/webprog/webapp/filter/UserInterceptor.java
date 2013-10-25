@@ -12,11 +12,12 @@ public class UserInterceptor extends HandlerInterceptorAdapter  {
 	
      public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
      throws Exception {
-    	  log.info(request.getRemoteHost());
+    	  
     	  if(request.isSecure())
     		  log.info("Secured!");
     	  if(request.getSession().isNew()){
     		  log.info("Nouvel utilisateur!");
+    		  log.info(request.getRemoteHost());
     	  }
           return super.preHandle(request, response, handler);
      }
