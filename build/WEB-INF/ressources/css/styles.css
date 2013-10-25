@@ -140,6 +140,24 @@ ul.entete-nav li.biographie {
 }
 
 
+ul.entete-nav #searchFormDiv {
+	float: left;
+	margin-right: 20px;
+	box-shadow:1px 1px 1px #D83F3D;
+	width: 200px;
+	height: 32px;
+	margin-top: -15px;
+	list-style-type: none;
+}
+ul.entete-nav #searchButtonLi {
+	float: left;
+	margin-right: 20px;
+	width: 300px;
+	height: 32px;
+	margin-top: -15px;
+	list-style-type: none;
+}
+
 ul #player{
 	float: right;
 	margin-right: 70px;
@@ -302,14 +320,13 @@ margin-left: 160px;
 }
 #searchButton{
 	background:url(/progWeb2013/ressources/images/navbar/search.png) no-repeat;
-	cursor:pointer;
+	height:32px;
+	width:32px;
 	border: none;
+	cursor:pointer;
 }
-ul.entete-nav #searchFormDiv {
-	float: left;
-	margin-right: 20px;
-	width: 300px;
-	height: 32px;
-	margin-top: -45px;
-	list-style-type: none;
+#searchFormInput{
+	border: none;
+	height:32px;
 }
+

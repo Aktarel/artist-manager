@@ -6,6 +6,7 @@
 
 	<context:component-scan base-package="fr.esiea.ail.webprog.webapp.controller" />
 
+	
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"
@@ -14,6 +15,13 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
     
+	<mvc:interceptors>
+	    <mvc:interceptor>
+	       <mvc:mapping path="/**"/>
+	       <bean class="fr.esiea.ail.webprog.webapp.filter.UserInterceptor" />
+	    </mvc:interceptor>
+	</mvc:interceptors>
+	
 	<mvc:resources mapping="/ressources/**" location="/WEB-INF/ressources/" />
 	<mvc:annotation-driven />
 </beans>

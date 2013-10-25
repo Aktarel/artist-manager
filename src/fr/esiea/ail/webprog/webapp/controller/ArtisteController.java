@@ -28,8 +28,7 @@ public class ArtisteController {
 		env.setProperty("java.naming.factory.url.pkgs",
 				"org.jboss.naming:org.jnp.interfaces");
 		env.setProperty("java.naming.provider.url", "jnp://localhost:1099");
-		InitialContext ic = new InitialContext(env);
-		this.ic = ic;
+		this.ic = new InitialContext(env);;
 	}
 
 	@RequestMapping("/read")
@@ -37,7 +36,7 @@ public class ArtisteController {
 			throws NamingException {
 
 		GestionnaireRessource manager = (GestionnaireRessource) ic
-				.lookup("Ear01/ArtisteManagerImpl/remote");
+				.lookup("Ear01/ArtisteManagerImpl/local");
 		Artiste a = (Artiste) manager.get(Ressources.artiste, nom);
 
 		

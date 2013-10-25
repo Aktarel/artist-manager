@@ -134,7 +134,7 @@ function launchAudio(url){
 				</thead>
 				<tbody>
 				<c:if test="${fn:length(artiste.listeEvenement) eq 0}">
-					<tr>L'artiste ne possède pas d'évenements</tr>
+					<tr><td>L'artiste ne possède pas d'évenements</td></tr>
 				</c:if>
 			<c:if test="${fn:length(artiste.listeEvenement) gt 0}">
 				<c:forEach var="evenement" items="${artiste.listeEvenement}">
