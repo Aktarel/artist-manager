@@ -28,8 +28,9 @@ Vous pouvez le modifier à tout moment via le fichier XML : application.xml
 
 Installation
 ==================
-[Pour Unix][]
-[Pour Windows][]
+[Pour Unix](https://github.com/Aktarel/artist-manager/wiki)
+
+[Pour Windows](https://github.com/Aktarel/artist-manager/wiki)
 
 
 Auteurs
