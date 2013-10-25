@@ -20,7 +20,9 @@ Deux composants :
   <li>PW-WebApps : Application WEB</li>
 </ul>
 
-=> Le deploiement se fait à l'aide de ant qui deploie automatiquement l'archive ear (jar + war)
+Il vous suffit de modifier dans le build.xml la propriété 'jboss.dir.install' et référencer le chemin d'installation de JBoss 6. (ou autre conteneur web si configuré)
+
+Le deploiement se fait à l'aide de ant qui deploie automatiquement l'archive ear (jar + war)
 
 Le contexte de l'application par défault est : progWeb2013.
 
@@ -37,6 +39,6 @@ Auteurs
 =============
 Deux étudiants en école d'ingénieur à l'ESIEA
 <ul>
-  <li>Nicolas Lebec</li>
+  <li><a href="https://github.com/Aktarel" Nicolas Lebec</a></li>
   <li><a href="https://github.com/moigoule"> Remy Ouadah</a></li>
 </ul>
