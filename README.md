@@ -30,7 +30,7 @@ Installation
 ==================
 [Pour Unix](https://github.com/Aktarel/artist-manager/wiki)
 
-[Pour Windows](https://github.com/Aktarel/artist-manager/wiki)
+[Pour Windows](https://github.com/Aktarel/artist-manager/wiki/Instructions-installation-windows)
 
 
 Auteurs
