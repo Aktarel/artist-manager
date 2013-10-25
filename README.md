@@ -39,6 +39,6 @@ Auteurs
 =============
 Deux étudiants en école d'ingénieur à l'ESIEA
 <ul>
-  <li><a href="https://github.com/Aktarel" Nicolas Lebec</a></li>
+  <li><a href="https://github.com/Aktarel">Nicolas Lebec</a></li>
   <li><a href="https://github.com/moigoule"> Remy Ouadah</a></li>
 </ul>
