@@ -26,7 +26,7 @@ Le contexte de l'application par défault est : progWeb2013.
 
 Vous pouvez le modifier à tout moment via le fichier XML : application.xml
 
-Instructions
+Logiciels
 ==================
    <h3>Unix</h3>
    
