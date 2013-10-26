@@ -36,7 +36,7 @@ public class ArtisteController {
 			throws NamingException {
 
 		GestionnaireRessource manager = (GestionnaireRessource) ic
-				.lookup("Ear01/ArtisteManagerImpl/local");
+				.lookup("Ear01/RessourceManagerImpl/local");
 		Artiste a = (Artiste) manager.get(Ressources.artiste, nom);
 
 		

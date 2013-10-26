@@ -28,14 +28,14 @@ public class HomeController {
 		env.setProperty("java.naming.factory.url.pkgs",
 				"org.jboss.naming:org.jnp.interfaces");
 		env.setProperty("java.naming.provider.url", "jnp://localhost:1099");
-		this.ic = new InitialContext(env);;
+		this.ic = new InitialContext(env);
 	}
 	
 	
 	@RequestMapping("/")
 	public String home(Model modele) throws NamingException{
 		
-		GestionnaireRessource manager = (GestionnaireRessource) ic.lookup("Ear01/ArtisteManagerImpl/local");
+		GestionnaireRessource manager = (GestionnaireRessource) ic.lookup("Ear01/RessourceManagerImpl/local");
 		
 		List<String> nomsArtistes = (List<String>) manager.get(Ressources.artistesToString,"50");
 		List<Artiste> topArtistes = (List<Artiste>) manager.get(Ressources.topArtistes,"20");
