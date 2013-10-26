@@ -44,7 +44,8 @@ sudo ./<JBOSS_REPERTOIRE>/bin/run.sh
 
 
 === RECAP ===
-Peut être copier-coller dans le terminel (testé sur ubuntu)
+Peut être copier-coller dans le terminal
+
 sudo wget http://download.jboss.org/jbossas/6.1/jboss-as-distribution-6.1.0.Final.zip
 sudo unzip jboss-as-distribution-6.1.0.Final.zip
 sudo chmod -R +rwx jboss-6.1.0.Final 
