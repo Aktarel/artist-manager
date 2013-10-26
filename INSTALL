@@ -1,5 +1,11 @@
 ##INSTALLATION DU PROJET
 
 ### PRE-REQUIS
+ANT : sudo apt-get install ant
+JDK : sudo apt-get install openjdk6
+JBOSS : wget http://download.jboss.org/jbossas/6.1/jboss-as-distribution-6.1.0.Final.zip
 
 ### CLONAGE GIT
+Dans le meme repertoire :
+git clone https://github.com/Aktarel/artist-manager PW-WebApp
+git clone https://github.com/Aktarel/artist-manager-model PW-Model
