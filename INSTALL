@@ -1,11 +1,29 @@
-##INSTALLATION DU PROJET
+====== INSTALLATION DU PROJET ======
 
-### PRE-REQUIS
+=== PRE-REQUIS ===
 ANT : sudo apt-get install ant
-JDK : sudo apt-get install openjdk6
+JDK : sudo apt-get install openjdk-7-jdk
 JBOSS : wget http://download.jboss.org/jbossas/6.1/jboss-as-distribution-6.1.0.Final.zip
 
-### CLONAGE GIT
+=== DEZIPPER JBOSS 6 ===
+
+unzip jboss-as-distribution-6.1.0.Final.zip
+sudo chmod -R +rwx .
+
+=== CLONAGE GIT ===
 Dans le meme repertoire :
 git clone https://github.com/Aktarel/artist-manager PW-WebApp
 git clone https://github.com/Aktarel/artist-manager-model PW-Model
+
+=== MODIFIER build.xml dans PW-WebApp ===
+
+Modifier la proprieté jboss.dir.install en remplacant le chemin exacte 
+(par exemple) /opt/jboss-6.1.0.Final
+(sans le / à la fin)
+
+/!\ Pensez à modifier les droits sur les deux projet :
+sudo chmod -R +rwx PW-WebApp
+sudo chmod -R +rwx PW-Model
+
+=== LANCER JBOSS 6 ===
+sudo ./<JBOSS_REPERTOIRE>/bin/run.sh
