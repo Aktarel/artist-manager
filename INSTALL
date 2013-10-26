@@ -37,7 +37,9 @@ cd ..
 === LANCER JBOSS 6 ===
 sudo ./<JBOSS_REPERTOIRE>/bin/run.sh
 
-
+=== ACCES APPLICATION ===
+ 
+ urlServer:8080/progWeb2013/
 
 
 
