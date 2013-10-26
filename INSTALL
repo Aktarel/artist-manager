@@ -5,6 +5,8 @@ ANT : sudo apt-get install ant
 JDK : sudo apt-get install openjdk-7-jdk
 JBOSS : wget http://download.jboss.org/jbossas/6.1/jboss-as-distribution-6.1.0.Final.zip
 
+/!\ si ant ne s'installe pas : pensez à faire un apt-get update
+
 === DEZIPPER JBOSS 6 ===
 
 unzip jboss-as-distribution-6.1.0.Final.zip
