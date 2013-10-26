@@ -17,7 +17,7 @@ git clone https://github.com/Aktarel/artist-manager-model PW-Model
 
 === MODIFIER build.xml dans PW-WebApp ===
 
-Modifier la proprieté jboss.dir.install en remplacant le chemin exacte 
+Modifier la proprieté XML : jboss.dir.install en remplacant le chemin exacte 
 (par exemple) /opt/jboss-6.1.0.Final
 (sans le / à la fin)
 
@@ -25,5 +25,40 @@ Modifier la proprieté jboss.dir.install en remplacant le chemin exacte
 sudo chmod -R +rwx PW-WebApp
 sudo chmod -R +rwx PW-Model
 
+=== LANCER DEPLOIEMENT ANT ===
+
+cd PW-Model
+sudo ant
+cd ..
+cd PW-WebApp
+sudo ant 
+cd ..
+
 === LANCER JBOSS 6 ===
 sudo ./<JBOSS_REPERTOIRE>/bin/run.sh
+
+
+
+
+
+=== RECAP ===
+Peut être copier-coller dans le terminel (testé sur ubuntu)
+sudo wget http://download.jboss.org/jbossas/6.1/jboss-as-distribution-6.1.0.Final.zip
+sudo unzip jboss-as-distribution-6.1.0.Final.zip
+sudo chmod -R +rwx jboss-6.1.0.Final 
+sudo ./jboss-6.1.0.Final/bin/run.sh &
+sudo apt-get install ant
+sudo apt-get install openjdk-7-jdk
+sudo git clone https://github.com/Aktarel/artist-manager PW-WebApp
+sudo git clone https://github.com/Aktarel/artist-manager-model PW-Model
+sudo chmod -R +rwx PW-WebApp
+sudo chmod -R +rwx PW-Model
+
+cd PW-Model
+sudo ant
+cd ..
+cd PW-WebApp
+sudo ant 
+cd ..
+
+sudo ./jboss-6.1.0.Final/bin/run.sh -b 0.0.0.0
