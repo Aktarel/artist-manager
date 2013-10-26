@@ -77,4 +77,4 @@ Pour voir les interactions avec la base de donnée :
 > adresseIPServer:8080/jmx-console
 > chercher dans la page : Hypersonic -> cliquer sur le lien correspondant
 > descendez dans la page et cliquez sur "invoke" de la propriété "StartDataBaseManager"
-> Une interface SWING s'afficher : les tables sont à gauche et à droite vous avez de quoi executez des commandes SQL
+> Une interface SWING devrait s'afficher : les tables sont à gauche et à droite vous avez de quoi executez des commandes SQL
