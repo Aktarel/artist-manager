@@ -18,7 +18,7 @@ git clone https://github.com/Aktarel/artist-manager-model PW-Model
 === MODIFIER build.xml dans PW-WebApp ===
 
 Modifier la proprieté XML : jboss.dir.install en remplacant le chemin exacte 
-(par exemple) /opt/jboss-6.1.0.Final
+(par exemple si installe dans le bon repertoire) /opt/jboss-6.1.0.Final
 (sans le / à la fin)
 
 /!\ Pensez à modifier les droits sur les deux projet :
@@ -35,7 +35,7 @@ sudo ant
 cd ..
 
 === LANCER JBOSS 6 ===
-sudo ./<JBOSS_REPERTOIRE>/bin/run.sh
+sudo ./<JBOSS_REPERTOIRE>/bin/run.sh -b 0.0.0.0
 
 === ACCES APPLICATION ===
  
@@ -49,7 +49,6 @@ Peut être copier-coller dans le terminal
 sudo wget http://download.jboss.org/jbossas/6.1/jboss-as-distribution-6.1.0.Final.zip
 sudo unzip jboss-as-distribution-6.1.0.Final.zip
 sudo chmod -R +rwx jboss-6.1.0.Final 
-sudo ./jboss-6.1.0.Final/bin/run.sh &
 sudo apt-get install ant
 sudo apt-get install openjdk-7-jdk
 sudo git clone https://github.com/Aktarel/artist-manager PW-WebApp
