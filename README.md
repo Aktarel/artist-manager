@@ -30,9 +30,7 @@ Vous pouvez le modifier à tout moment via le fichier XML : application.xml
 
 Installation
 ==================
-[Pour Unix](https://github.com/Aktarel/artist-manager/wiki/Instruction-Installation-Unix)
-
-[Pour Windows](https://github.com/Aktarel/artist-manager/wiki/Instruction-Installation-Windows)
+Voir fichier INSTALL
 
 Demarche
 ==================
