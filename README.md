@@ -30,10 +30,26 @@ Vous pouvez le modifier à tout moment via le fichier XML : application.xml
 
 Installation
 ==================
-[Pour Unix](https://github.com/Aktarel/artist-manager/wiki/Instruction-Installation-Unix)
+Voir fichier INSTALL
 
-[Pour Windows](https://github.com/Aktarel/artist-manager/wiki/Instruction-Installation-Windows)
-
+Demarche
+==================
+L'ensemble des technologies utilisés sont :
+<ul> 
+<li> Hibernate 3 / JPA 2 : Mapping Monde Objet -> Monde Relationnel</li>
+<li> EJB 3.1 : dialogue entre composants plus simple </li>
+<li> HSQLDB (Hypersonic DB)</li>
+<li> JAXB : Mapping XML -> Monde Objet </li>
+<li> Trang : generation de schema XSD à partir du fichier XML </li>
+<li> XJC : generateur de classes à partir de fichier XML</li>
+<li> Spring MVC : architecture web MVC </li>
+<li> JSTL : taglib/balises permettant de manipuler les attributs en sessions facilement </li>
+<li> CSS3 : partie style des pages web </li>
+<li> HTML5 : balisage permettant d'organiser la page web (utiliser dans ce projet pour lire contenu audio , balises sections ...) </li>
+<li> JBOSS ASS 6 : conteneur web qui supporte l'interface EJB et implémente une base de donnée HSQLDB au démarrage </li>
+<li> Log4j : librairie gérant les cannaux et priorité des  (seul cannal configué sur la console JBOSS) </li>
+<li> Git : gestionnaire de dépot utilisé pour partager le code avec l'équipe</li>
+</ul>
 
 Auteurs
 =============
