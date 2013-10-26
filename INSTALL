@@ -70,7 +70,7 @@ cd ..
 
 sudo ./jboss-6.1.0.Final/bin/run.sh -b 0.0.0.0
 
-/!\ en cas d'erreur : augmenter la ram de la VM à 1024MO
+/!\ en cas d'erreur : augmenter la ram de la VM à 512MO (testé : it works)
 
 
 === EXTRAS ===
