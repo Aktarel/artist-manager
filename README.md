@@ -24,10 +24,6 @@ Il vous suffit de modifier dans le build.xml la propriété 'jboss.dir.install' 
 
 Le deploiement se fait à l'aide de ant qui deploie automatiquement l'archive ear (jar + war)
 
-Le contexte de l'application par défault est : progWeb2013.
-
-Vous pouvez le modifier à tout moment via le fichier XML : application.xml
-
 Installation
 ==================
 Voir fichier INSTALL
