@@ -14,12 +14,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
+/**
+ * 
+ * Controller appelle lors de l'arrive sur l'application web
+ * Mapping dans l'url : "<contexte>/" donc tout
+ * @author nicolas
+ *
+ */
 @Controller
 @RequestMapping("/")
 public class HomeController {
 
 	private InitialContext ic;
-	
+
+	/**
+	 * Declaration des parametres jndi pour se brancher sur les bonnes interfaces
+	 * @throws NamingException
+	 */
 	public HomeController() throws NamingException {
 
 		Properties env = new Properties();
@@ -31,7 +43,12 @@ public class HomeController {
 		this.ic = new InitialContext(env);
 	}
 	
-	
+	/**
+	 * Premiere methode appelle lorsque l'utilisateur arrive sur le site sans preciser d'url de recherche d'artiste
+	 * @param modele : les donnees passees en session
+	 * @return string : renvoie vers page accueil
+	 * @throws NamingException
+	 */
 	@RequestMapping("/")
 	public String home(Model modele) throws NamingException{
 		
