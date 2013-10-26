@@ -7,6 +7,9 @@ JBOSS : wget http://download.jboss.org/jbossas/6.1/jboss-as-distribution-6.1.0.F
 
 /!\ si ant ne s'installe pas : pensez à faire un apt-get update
 
+/!\ si ant lache des erreurs au runtime : sudo apt-get remove openjdk-6-*
+(puis verifier que le openjdk 7 est installer )
+
 === DEZIPPER JBOSS 6 ===
 
 unzip jboss-as-distribution-6.1.0.Final.zip
