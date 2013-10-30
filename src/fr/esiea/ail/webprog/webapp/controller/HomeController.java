@@ -85,6 +85,15 @@ public class HomeController {
 		return "accueil";
 	}
 	
+	/**
+	 * Methode permettant de voter de l'accueil
+	 * On recupere un artiste en mode EAGER (toute les entites lie a cette entite)
+	 * @param nom
+	 * @param modele
+	 * @param request
+	 * @return
+	 * @throws NamingException
+	 */
 	@RequestMapping("/vote")
 	public String voter(@RequestParam String nom,Model modele,HttpServletRequest request) throws NamingException{
 
@@ -92,7 +101,6 @@ public class HomeController {
 		Utilisateur user = (Utilisateur) request.getAttribute("utilisateur");
 		user.addFavoris(artiste);
 		manager.update(Ressources.utilisateur, user);
-		
 		return home(modele);
 	}
 }

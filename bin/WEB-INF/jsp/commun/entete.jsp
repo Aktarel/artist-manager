@@ -15,6 +15,9 @@
 				<li class="evenements"><a
 					href="<c:url value="/artiste/read?nom=${artiste.nom}#evenements"/>">&nbsp;
 						&nbsp;</a></li>
+				<li class="vote"><a
+					href="<c:url value="/artiste/vote?nom=${artiste.nom}"/>">&nbsp;
+						&nbsp;</a></li>
 				<div id="player"></div>
 			</c:if>
 		</ul>

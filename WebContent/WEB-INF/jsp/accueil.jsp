@@ -55,9 +55,9 @@
 				<c:if test="${fn:length(topArtistes) gt 0}">
 					<c:forEach var="artiste" items="${topArtistes}">
 						<tr>
-								<td>${artiste.nom}</td>
+								<td><a href="<c:url value="/artiste/read?nom=${artiste.nom}"/>">${artiste.nom}</a></td>
 								<td>${artiste.popularity}</td>
-								<td>${fn:length(artiste.listeFans)}</td>
+								<td>${fn:length(artiste.fans)}</td>
 								<td><a href="<c:url value="/vote?nom=${artiste.nom}" />"><img alt="Votez!" src="<c:url value="/ressources/images/pictos/star.png"/>" /></a></td>
 						</tr>
 					</c:forEach>

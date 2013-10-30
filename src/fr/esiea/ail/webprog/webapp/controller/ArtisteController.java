@@ -1,6 +1,5 @@
 package fr.esiea.ail.webprog.webapp.controller;
 
-import java.util.Map;
 import java.util.Properties;
 
 import javax.naming.InitialContext;
@@ -15,7 +14,6 @@ import modele.Utilisateur;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -72,6 +70,26 @@ public class ArtisteController {
 		modele.addAttribute("similaires", a.getListeSimilaire());
 
 		return "artiste/afficher";
+	}
+	
+	
+	/**
+	 * Methode permettant de voter de depuis la page de l'artiste
+	 * On recupere un artiste en mode EAGER (toute les entites lie a cette entite)
+	 * @param nom
+	 * @param modele
+	 * @param request
+	 * @return
+	 * @throws NamingException
+	 */
+	@RequestMapping("/vote")
+	public String voter(@RequestParam String nom,Model modele,HttpServletRequest request) throws NamingException{
+
+		Artiste artiste = (Artiste) manager.get(Ressources.artiste, nom,"vote");
+		Utilisateur user = (Utilisateur) request.getAttribute("utilisateur");
+		user.addFavoris(artiste);
+		manager.update(Ressources.utilisateur, user);
+		return read(artiste.getNom(),modele);
 	}
 	
 }

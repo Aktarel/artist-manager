@@ -138,6 +138,15 @@ ul.entete-nav li.biographie {
 	margin-top: -16px;
 	list-style-type: none;
 }
+ul.entete-nav li.vote {
+	float: left;
+	background: url(/progWeb2013/ressources/images/pictos/star.png);
+	margin-right: 20px;
+	width: 32px;
+	height: 32px;
+	margin-top: -16px;
+	list-style-type: none;
+}
 
 
 ul.entete-nav #searchFormDiv {
