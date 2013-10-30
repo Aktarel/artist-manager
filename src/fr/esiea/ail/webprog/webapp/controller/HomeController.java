@@ -1,5 +1,7 @@
 package fr.esiea.ail.webprog.webapp.controller;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Properties;
 
@@ -57,9 +59,23 @@ public class HomeController {
 		List<String> nomsArtistes = (List<String>) manager.get(Ressources.artistesToString,"50");
 		List<Artiste> topArtistes = (List<Artiste>) manager.get(Ressources.topArtistes,"20");
 		
+		Collections.sort(topArtistes,new Comparator<Artiste>(){
+			public int compare(Artiste o1, Artiste o2) {
+				if(o1.getPopularity()>o2.getPopularity()){
+					return -1;
+				}
+				else if(o1.getPopularity()<o2.getPopularity()){
+					return 1;
+				}
+				else{
+					return 0;
+				}
+				
+			}
+		});
+		
 		modele.addAttribute("nomArtistes",nomsArtistes);
 		modele.addAttribute("topArtistes",topArtistes);
 		return "accueil";
 	}
-	
 }

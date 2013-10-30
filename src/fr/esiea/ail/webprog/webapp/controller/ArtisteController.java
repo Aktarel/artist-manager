@@ -1,16 +1,21 @@
 package fr.esiea.ail.webprog.webapp.controller;
 
+import java.util.Map;
 import java.util.Properties;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.servlet.http.HttpServletRequest;
 
 import manager.GestionnaireRessource;
 import manager.Ressources;
 import modele.Artiste;
+import modele.Utilisateur;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -26,6 +31,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/artiste")
 public class ArtisteController {
 
+	Logger log = Logger.getLogger(ArtisteController.class);
+	
+	private GestionnaireRessource manager ;
 	private InitialContext ic;
 
 	/**
@@ -40,7 +48,9 @@ public class ArtisteController {
 		env.setProperty("java.naming.factory.url.pkgs",
 				"org.jboss.naming:org.jnp.interfaces");
 		env.setProperty("java.naming.provider.url", "jnp://localhost:1099");
-		this.ic = new InitialContext(env);;
+		this.ic = new InitialContext(env);
+		this.manager = (GestionnaireRessource) ic
+		.lookup("Ear01/RessourceManagerImpl/local");
 	}
 
 	
@@ -55,8 +65,6 @@ public class ArtisteController {
 	public String home(@RequestParam String nom, Model modele)
 			throws NamingException {
 
-		GestionnaireRessource manager = (GestionnaireRessource) ic
-				.lookup("Ear01/RessourceManagerImpl/local");
 		Artiste a = (Artiste) manager.get(Ressources.artiste, nom);
 
 		
@@ -65,4 +73,16 @@ public class ArtisteController {
 
 		return "artiste/afficher";
 	}
+	
+	@RequestMapping("/voter")
+	public String voter(@RequestParam String nom,ModelMap modele,HttpServletRequest request){
+
+		Artiste artiste = (Artiste) manager.get(Ressources.artiste, nom);
+		Utilisateur user = (Utilisateur) request.getAttribute("utilisateur");
+		user.addFavoris(artiste);
+		manager.update(Ressources.utilisateur, user);
+		
+		return "accueil";
+	}
 }
+

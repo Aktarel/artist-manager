@@ -41,7 +41,9 @@
 			<thead>
 				<tr>
 					<th>Nom Artiste</th>
-					<th>Popularité</th>
+					<th>Views</th>
+					<th>Favoris</th>
+					<th>Actions</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -51,11 +53,13 @@
 					</tr>
 				</c:if>
 				<c:if test="${fn:length(topArtistes) gt 0}">
-					<tr>
-						<c:forEach var="artiste" items="${topArtistes}">
-							<td>${artiste.nom}</td>
-							<td>${artiste.popularity}</td>
-					</tr>
+					<c:forEach var="artiste" items="${topArtistes}">
+						<tr>
+								<td>${artiste.nom}</td>
+								<td>${artiste.popularity}</td>
+								<td>${fn:length(artiste.listeFans)}</td>
+								<td><a href="<c:url value="/artiste/voter?nom=${artiste.nom}" />">V</a></td>
+						</tr>
 					</c:forEach>
 				</c:if>
 			</tbody>

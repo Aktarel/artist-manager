@@ -143,7 +143,6 @@ ul.entete-nav li.biographie {
 ul.entete-nav #searchFormDiv {
 	float: left;
 	margin-right: 20px;
-	box-shadow:1px 1px 1px #D83F3D;
 	width: 200px;
 	height: 32px;
 	margin-top: -15px;
@@ -322,11 +321,10 @@ margin-left: 160px;
 	background:url(/progWeb2013/ressources/images/navbar/search.png) no-repeat;
 	height:32px;
 	width:32px;
-	border: none;
 	cursor:pointer;
+	border: none;
 }
 #searchFormInput{
-	border: none;
 	height:32px;
 }
 
