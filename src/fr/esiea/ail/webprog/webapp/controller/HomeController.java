@@ -7,14 +7,18 @@ import java.util.Properties;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.servlet.http.HttpServletRequest;
 
 import manager.GestionnaireRessource;
 import manager.Ressources;
 import modele.Artiste;
+import modele.Utilisateur;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 /**
@@ -28,6 +32,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class HomeController {
 
+	private 	GestionnaireRessource manager;
 	private InitialContext ic;
 
 	/**
@@ -43,6 +48,7 @@ public class HomeController {
 				"org.jboss.naming:org.jnp.interfaces");
 		env.setProperty("java.naming.provider.url", "jnp://localhost:1099");
 		this.ic = new InitialContext(env);
+		this.manager  = (GestionnaireRessource) ic.lookup("Ear01/RessourceManagerImpl/local");
 	}
 	
 	/**
@@ -54,7 +60,7 @@ public class HomeController {
 	@RequestMapping("/")
 	public String home(Model modele) throws NamingException{
 		
-		GestionnaireRessource manager = (GestionnaireRessource) ic.lookup("Ear01/RessourceManagerImpl/local");
+	
 		
 		List<String> nomsArtistes = (List<String>) manager.get(Ressources.artistesToString,"50");
 		List<Artiste> topArtistes = (List<Artiste>) manager.get(Ressources.topArtistes,"20");
@@ -77,5 +83,16 @@ public class HomeController {
 		modele.addAttribute("nomArtistes",nomsArtistes);
 		modele.addAttribute("topArtistes",topArtistes);
 		return "accueil";
+	}
+	
+	@RequestMapping("/vote")
+	public String voter(@RequestParam String nom,Model modele,HttpServletRequest request) throws NamingException{
+
+		Artiste artiste = (Artiste) manager.get(Ressources.artiste, nom,"vote");
+		Utilisateur user = (Utilisateur) request.getAttribute("utilisateur");
+		user.addFavoris(artiste);
+		manager.update(Ressources.utilisateur, user);
+		
+		return home(modele);
 	}
 }

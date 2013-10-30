@@ -62,10 +62,10 @@ public class ArtisteController {
 	 * @throws NamingException
 	 */
 	@RequestMapping("/read")
-	public String home(@RequestParam String nom, Model modele)
+	public String read(@RequestParam String nom, Model modele)
 			throws NamingException {
 
-		Artiste a = (Artiste) manager.get(Ressources.artiste, nom);
+		Artiste a = (Artiste) manager.get(Ressources.artiste, nom,"view");
 
 		
 		modele.addAttribute("artiste", a);
@@ -74,15 +74,5 @@ public class ArtisteController {
 		return "artiste/afficher";
 	}
 	
-	@RequestMapping("/voter")
-	public String voter(@RequestParam String nom,ModelMap modele,HttpServletRequest request){
-
-		Artiste artiste = (Artiste) manager.get(Ressources.artiste, nom);
-		Utilisateur user = (Utilisateur) request.getAttribute("utilisateur");
-		user.addFavoris(artiste);
-		manager.update(Ressources.utilisateur, user);
-		
-		return "accueil";
-	}
 }
 

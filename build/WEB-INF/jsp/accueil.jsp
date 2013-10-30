@@ -58,7 +58,7 @@
 								<td>${artiste.nom}</td>
 								<td>${artiste.popularity}</td>
 								<td>${fn:length(artiste.listeFans)}</td>
-								<td><a href="<c:url value="/artiste/voter?nom=${artiste.nom}" />">V</a></td>
+								<td><a href="<c:url value="/vote?nom=${artiste.nom}" />"><img alt="Votez!" src="<c:url value="/ressources/images/pictos/star.png"/>" /></a></td>
 						</tr>
 					</c:forEach>
 				</c:if>
